@@ -1,4 +1,4 @@
-Company : Octanet Solutions Pvt Ltd.
+Company : Octanet Solutions Pvt Ltd
 Name : Allen Joshua R
 Intern Id : 07-2024-48465
 Domain : Web Development
