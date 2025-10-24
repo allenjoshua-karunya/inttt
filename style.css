@@ -216,7 +216,6 @@ button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-
     transform: none;
 }
 
-
 /* News */
 .inbox-list{list-style:none;padding:0;margin:0;max-height:320px;overflow:auto}
 .inbox-list li{padding:10px;border-bottom:1px solid rgba(255, 255, 255, 0.08);display:flex;gap:8px;align-items:flex-start; flex-direction: column; transition: background 0.2s;}
@@ -242,4 +241,5 @@ button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-
 }
 @media (max-width:560px){
   .grid{grid-template-columns:repeat(1,1fr)}
+
 }
