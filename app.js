@@ -3,7 +3,6 @@
     Storage: localStorage
     No build tools. Single-file JS for simplicity.
 */
-
 /* ---------- Utilities & Storage ---------- */
 const Storage = {
   get(key, fallback) {
@@ -459,4 +458,5 @@ function boot(){
 boot();
 
 /* Expose small helper for dev */
+
 window._DASH = { State, persistAll };
