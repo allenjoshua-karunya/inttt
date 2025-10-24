@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Personal Dashboard — Frontend Only</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="app">
+    <nav class="topbar">
+      <div class="brand">Dash • your workspace</div>
+      <div class="controls">
+        <button id="btn-refresh" title="Refresh remote widgets">⟳</button>
+        <button id="toggle-theme" title="Toggle dark / light">🌙</button>
+      </div>
+    </nav>
+
+    <main class="grid">
+      <section class="widget card" id="widget-clock">
+        <header class="whead"><h3>Clock</h3><button class="collapse">▴</button></header>
+        <div class="wbody">
+          <div class="clock-large" id="clock-time">--:--</div>
+          <div id="clock-zone">Local time</div>
+        </div>
+      </section>
+
+      <section class="widget card" id="widget-weather">
+        <header class="whead"><h3>Weather</h3><button class="collapse">▴</button></header>
+        <div class="wbody">
+          <div id="weather-content">
+            <div class="loading">Allow location or click refresh</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="widget card" id="widget-transit">
+        <header class="whead"><h3>Transit Status</h3><button class="collapse">▴</button></header>
+        <div class="wbody">
+          <div id="transit-status">
+            <div style="font-weight:700; color: #10b981;">All Lines Operating Normally</div>
+            <div style="font-size:13px; color:var(--muted); margin-top: 6px;">
+              Simulated status. Click refresh for new updates.
+            </div>
+            <ul id="transit-alerts" class="notes-list" style="margin-top:10px;">
+              <li>No major delays reported.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="widget card large" id="widget-todo">
+        <header class="whead"><h3>To-Do</h3><div class="wtools">
+          <button id="todo-clear-completed" title="Clear completed">Clear ✓</button>
+          <button class="collapse">▴</button>
+        </div></header>
+        <div class="wbody">
+          <form id="todo-form" class="todo-form">
+            <input id="todo-input" placeholder="Add a task and press Enter" />
+            <select id="todo-tag">
+              <option value="">Tag</option>
+              <option value="work">Work</option>
+              <option value="personal">Personal</option>
+              <option value="urgent">Urgent</option>
+            </select>
+          </form>
+          <ul id="todo-list" class="todo-list"></ul>
+          <div class="todo-footer">
+            <span id="todo-count">0 tasks</span>
+            <div>
+              <button id="filter-all" class="active">All</button>
+              <button id="filter-pending">Pending</button>
+              <button id="filter-completed">Completed</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="widget card" id="widget-calendar">
+        <header class="whead"><h3>Calendar</h3><button class="collapse">▴</button></header>
+        <div class="wbody">
+          <div id="calendar-controls" class="row">
+            <button id="cal-prev">‹</button>
+            <div id="cal-month" class="cal-month">Month</div>
+            <button id="cal-next">›</button>
+          </div>
+          <div id="calendar-grid" class="calendar-grid"></div>
+          <div id="calendar-events" class="calendar-events"></div>
+        </div>
+      </section>
+
+      <section class="widget card" id="widget-notes">
+        <header class="whead"><h3>Notes</h3><button class="collapse">▴</button></header>
+        <div class="wbody">
+          <form id="note-form" class="note-form">
+            <input id="note-title" placeholder="Title" />
+            <textarea id="note-body" rows="3" placeholder="Write a note..."></textarea>
+            <div class="note-actions">
+              <button id="note-add">Save</button>
+            </div>
+          </form>
+          <ul id="notes-list" class="notes-list"></ul>
+        </div>
+      </section>
+
+      <section class="widget card" id="widget-stopwatch">
+        <header class="whead"><h3>Stopwatch</h3><button class="collapse">▴</button></header>
+        <div class="wbody">
+          <div class="stopwatch-display clock-large" id="stopwatch-time">00:00.00</div>
+          <div class="stopwatch-controls" style="margin-top: 10px; display: flex; justify-content: space-around;">
+            <button id="stopwatch-lap" disabled>Lap</button>
+            <button id="stopwatch-start">Start</button>
+            <button id="stopwatch-reset" disabled>Reset</button>
+          </div>
+          <ul id="stopwatch-laps" class="notes-list" style="margin-top: 10px;"></ul>
+        </div>
+      </section>
+
+      <section class="widget card" id="widget-news">
+        <header class="whead"><h3>News Feed</h3><button class="collapse">▴</button></header>
+        <div class="wbody">
+          <div class="inbox-controls row" style="display:flex; justify-content: space-between;">
+            <select id="news-category">
+              <option value="general">General</option>
+              <option value="technology">Technology</option>
+              <option value="sports">Sports</option>
+            </select>
+            <button id="news-refresh">Refresh</button>
+          </div>
+          <ul id="news-list" class="inbox-list">
+            <li>Loading news...</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>Built with HTML5, CSS, JS!</div>
+      <div class="meta">| Allen Joshua R | allenjoshua@karunya.edu.in | URK23CS1138 |</div>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
